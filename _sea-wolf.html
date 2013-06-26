@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<title>sea wolf</title>
+	<link rel="stylesheet" href="sea-wolf.css" />
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="_sea-wolf.js"></script>
+</head>
+<body>
+	<div class="sea-wolf">
+		<h1>MY GAME - SEA WOLF</h1>
+		<div class="control">
+			<span class="score"><strong>SCORE:</strong><span>0</span></span>
+			<span class="coin"><strong>COIN:</strong><span>0</span></span>
+			<span class="part"><strong>PART:</strong><span>0</span></span>
+			<div class="hp-box"><span>HP:</span><ul class="hp"></ul></div>
+			<span class="pause-go pause">pause go</span>
+			<div class="life-box"><strong>LIFE:</strong><span class="life"></span></div>
+			<div class="power-box">
+				<p>POWER:</p>
+				<ul class="power-house"></ul>
+			</div>
+			<div class="stage">STAGE <strong>1</strong></div>
+			<div class="shop">SHOP</div>
+		</div>
+		<div class="canvas-bg">
+			<canvas id="canvas" width="1000" height="500">If you see this words, please update your browers.</canvas>
+			<div class="sky"></div>
+			<div class="sea"></div>
+			<div class="text-info"></div>
+		</div>
+	</div>
+	<div class="loader">
+		<div class="wait">
+			<div class="pre"></div>
+			<div class="progress"><b></b></div>
+		</div>
+		<div class="ready">
+			<a class="start" href="javascript:;" title="start game">PLAY</a>
+			<a class="edit" href="javascript:;" title="edit map">EDIT MAP</a>
+		</div>
+	</div>
+	<div class="editor-win">
+		<div class="player-panel">3212321<br/>12312</div>
+		<div class="enemy-panel">3rrreew1<br/>1ewqewqewq2</div>
+	</div>
+	<div class="gift-select-box cmDialog">
+		<ul	class="gift-list"><li class="">
+			<div class="img"></div>
+			<p class="name"></p>
+			<p class="desc"></p>
+		</li><li class="">
+			<div class="img"></div>
+			<p class="name"></p>
+			<p class="desc"></p>
+		</li><li class="">
+			<div class="img"></div>
+			<p class="name"></p>
+			<p class="desc"></p>
+		</li></ul>
+	</div>
+	<div class="popup-fail cmDialog">
+		<div class="msg">你输了！</div>
+		<div class="btns"><a class="restart">重新开始</a></div>
+	</div>
+	<div class="popup-win cmDialog">
+		<div class="msg">你赢了！</div>
+		<div class="btns"><a class="restart">重新开始</a></div>
+	</div>
+	<div class="popup-shop cmDialog cmTabList">
+		<ul class="tab-list">
+			<li for="shop" class="cmTabs">商店</li>
+			<li for="store" class="cmTabs">仓库</li>
+		</ul>
+		<div class="content">
+			<div class="shop cmTabContent">
+				<ul class="list"></ul>
+			</div>
+			<div class="store cmTabContent">
+				<ul class="list"></ul>
+			</div>
+		</div>
+		<div class="msg"></div>
+		<div class="current-info">
+			<div class="assets">
+				<div class="coin"><strong>COIN:</strong><span>0</span></div>
+				<div class="part"><strong>PART:</strong><span>0</span></div>
+			</div>
+			<div class="equipment">
+				<ul class="ship"></ul>
+				<ul class="eq-list"></ul>
+			</div>
+			<a class="close-shop">关闭</a>
+		</div>
+	</div>
+	<div class="popup-confirm-sell cmDialog">
+		<div class="msg">确定要出售<strong>组件</strong>吗？</div>
+		<div class="btn-box">
+			<a class="ok">出售</a>
+			<a class="cancel">取消</a>
+		</div>
+	</div>
+	<div class="popup-unequip cmDialog">
+		<div class="msg">确定要卸下<strong>组件</strong>吗？</div>
+		<div class="btn-box">
+			<a class="ok">卸下</a>
+			<a class="cancel">取消</a>
+		</div>
+	</div>
+</body>
+</html>
