@@ -6,7 +6,7 @@ javascript,canvas,game
 
 ##游戏说明
 
-方向键控制移动，空格键发射子弹，B键释放power。暂时是个DEMO，只设置了3关，有BOSS战。玩家子弹可以变换升级，并设置了3种类型的子弹供玩家体验。Power暂时只涉及了一种\:\)。
+方向键控制移动，空格键发射子弹，B键释放power。暂时是个DEMO，只设置了3关，有BOSS战。玩家子弹可以变换升级，并设置了3种类型的子弹供玩家体验。Power暂时只设计了一种\:\)。
 
 ##运营
 
@@ -14,28 +14,34 @@ javascript,canvas,game
 
 开发者可以在SW\.game\.stage\.stageData中任意添加关卡以及关卡中的小兵、boss。
 
->SW.game.stage.stageData['0'] = [...]//关卡1
->SW.game.stage.stageData['1'] = [...]//关卡2
->SW.game.stage.stageData['2'] = [...]//关卡3
+>SW.game.stage.stageData['0'] = [...] //关卡1
+>SW.game.stage.stageData['1'] = [...] //关卡2
+>SW.game.stage.stageData['2'] = [...] //关卡3
 
 >{type: 'enemy',move: 100,idx: 7,time: 4200,gift: {egg: 1,equipment: [0]}}
+
 将会在该关卡开始4\.2s后向舞台添加一个编号为7的小兵(SW.game.enemy)，小兵的行为路线编号是100(SW.game.movePath)，击毁奖励是一个egg(升级能力用)和一个编号为0的装备(SW.game.equipment)(可以从【shop】=》【仓库】中查看)。
 
 >{type: 'egg',time: 20000, XY: [5, 10]}
+
 直接向舞台添加egg和p需要设定XY值。
 
 >{'half': true}
+
 代表关卡一半，关卡后半的计时从0开始。
 
 ######如何更改游戏数据
 
 >SW.game.enemy
+
 数字编号的属性就是小兵的数据。
 
 >SW.game.boss
+
 数字编号的属性就是boss的数据。boss的技能可以在skill中设置，形如[[技能名, 技能CD]|, [...]]。
 
 >SW.game.ship
+
 数字编号的属性是船体的数据。
 
 
