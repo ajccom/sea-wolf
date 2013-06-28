@@ -1,4 +1,4 @@
-sea_wolf
+sea wolf
 ========
 
 javascript,canvas,game
@@ -10,9 +10,9 @@ javascript,canvas,game
 
 ##运营
 
-####如何自行设置关卡
+###如何自行设置关卡
 
-开发者可以在SW\.game\.stage\.stageData中任意添加关卡以及关卡中的小兵、boss。
+####开发者可以在SW\.game\.stage\.stageData中任意添加关卡以及关卡中的小兵、boss。
 
 >SW.game.stage.stageData['0'] = [...]
 
@@ -38,7 +38,7 @@ javascript,canvas,game
 
 代表关卡一半，关卡后半的计时从0开始。
 
-####如何更改游戏数据
+###如何更改游戏数据
 
 >SW.game.enemy
 
@@ -64,8 +64,6 @@ sea wolf的简写，也是程序的命名空间。
 ###SW\.UI
 
 除了Canvas之外的DOM方面的UI组件都定义在SW\.UI之中。(editor部分不计)
-
-####
 
 ###SW\.loader
 
