@@ -1,0 +1,205 @@
+* {padding:0;margin:0}
+ul, ol, li {list-style: none}
+
+.loader {width: 100%; height: 100%; color: #fff; text-align: center; font-size: 30px; position: absolute; top: 0; left: 0; z-index: 2000; font-weight: bold;}
+.loader .progress {width: 500px; height: 20px; display: block; background: #000; border-radius: 4px;}
+.loader .progress b {width: 0%; height: 20px; display: block; background: #0ff; border-radius: 4px;}
+.loader .wait {height: 80px; width: 500px; margin: 250px auto 0;}
+.loader .ready {display: none; margin: 250px 0 0; text-align: center;}
+.loader .ready a {color: #fff; text-decoration: none; padding: 2px; border-radius: 4px; box-shadow: 0 0 10px #fff; background: #0c0;}
+
+.sea-wolf {width: 1000px; margin: 0 auto; padding-bottom: 15px;}
+.sea-wolf h1 {height: 80px; text-indent: -9000px; background: url(image/logo.jpg) no-repeat 0 0;}
+.sea-wolf .control {height: 52px; font-size: 14px; line-height: 20px; background: url(image/control-bg.jpg) no-repeat 0 0; position: relative;}
+.sea-wolf .control .score {color: #fff; font-size: 14px; font-weight: bold; position: absolute; left: 470px; top: 8px; text-shadow: 1px 0 1px #333}
+.sea-wolf .control .coin {color: #ff0; font-size: 14px; font-weight: bold; position: absolute; left: 420px; top: 28px; text-shadow: 1px 0 1px #333}
+.sea-wolf .control .part {color: #0cd0ed; font-size: 14px; font-weight: bold; position: absolute; left: 530px; top: 28px; text-shadow: 1px 0 1px #333}
+
+.sea-wolf .control .hp-box {position: absolute; overflow: hidden; left: 15px; top: 15px; line-height: 1.4em;}
+.sea-wolf .control .hp-box span {float: left; color: #7f1; font-weight: bold; padding-right: 2px; text-shadow: 1px 0 1px #333;}
+.sea-wolf .control .hp-box .hp {float: left; position: relative; top: 4px; border: 1px solid #ccc;}
+.sea-wolf .control .hp-box .hp li {float: left; position: relative; background: none; text-indent: -9000px; width: 10px; height: 10px; border-radius: 100%; border: 1px solid #999; margin: 0 1px}
+.sea-wolf .control .hp-box .hp li.red {background: #3f3}
+.sea-wolf .control .hp-box .hp li.red:before {background: #fff; width: 2px; height: 2px; position: absolute; left: 7px; top: 3px; content: ''}
+.sea-wolf .control .life-box {position: absolute; font-weight: bold; left: 15px; top: 0px; color: #f9f4a2; font-size: 14px;}
+.sea-wolf .control .life-box strong {text-shadow: 1px 0 1px #000; padding-right: 2px;}
+.sea-wolf .control .life-box .life {text-shadow: 1px 0 1px #000;}
+.sea-wolf .control .pause-go {background: url(image/pause-go.png) no-repeat -9000px -9000px; display: block; width: 35px; height: 34px; text-indent: -9000px; left: 856px; top: 8px; position: absolute; cursor: pointer}
+.sea-wolf .control .pause {background-position: -35px 0;}
+.sea-wolf .control .go {background-position: 0 0;}
+.sea-wolf .control .stage {position: absolute; top: 8px; left: 720px; color: #fff; text-shadow: 1px 0 1px #333; font-weight: bold;}
+.sea-wolf .control .stage strong {font-size: 16px;}
+.sea-wolf .control .shop {position: absolute; top: 28px; left: 720px; color: #3af; text-shadow: 1px 0 1px #333; border-radius: 3px; border: 1px solid #3af; text-align: center; padding: 0 20px; background: #fff; cursor: pointer}
+.sea-wolf .control .shop:hover {background: #3af; border: 1px solid #fff; color: #fff;}
+
+.sea-wolf .control .power-box {overflow: hidden; position: absolute; left: 15px; top: 31px;}
+.sea-wolf .control .power-box p {float: left; padding-right: 2px; color: #f55; font-weight: bold; text-shadow: 1px 0 1px #000;}
+.sea-wolf .control .power-box .power {width: 100px; height: 10px; overflow: hidden; background: #aaa; box-shadow: 1px 0 2px #ccc; float: left; position: relative; top: 6px}
+.sea-wolf .control .power-box .power span {display: block; height: 8px; margin-top: 1px; background: #f55; width: 0;}
+.sea-wolf .control .power-box .power span.power-fill {background: #f00;}
+.sea-wolf .control .power-box .power-house {float: left; margin-left: 2px; position: relative; top: 6px; height: 10px;}
+.sea-wolf .control .power-box .power-house li {width: 8px; height: 8px; border-radius: 100%; border: 1px solid #999; background: none; float: left; margin: 0 1px;}
+.sea-wolf .control .power-box .power-house li.green {background: #f00; border: 1px solid #999; position: relative}
+.sea-wolf .control .power-box .power-house li.green:after {background: #fff; width: 2px; height: 2px; position: absolute; left: 5px; top: 2px; content: ''}
+.sea-wolf .canvas-bg {width: 1000px; margin: 0 auto; height: 500px; background: #333; position: relative;}
+.sea-wolf .canvas-bg .sea{width: 1000px; position: absolute; left: 0; top: 0; z-index: 1; background: url(image/sea.png) no-repeat left bottom #ccf}
+.sea-wolf .canvas-bg .sky{width: 1000px; position: absolute; left: 0; top: 0; z-index: 1; background: url(image/sky.jpg) no-repeat 0 0 #99f}
+.sea-wolf .canvas-bg .sea.power-shell {background: url(image/oppo-sea.png) no-repeat left bottom #3f3f3f}
+.sea-wolf .canvas-bg .sky.power-shell {background: url(image/oppo-sky.jpg) no-repeat 0 0 #fff}
+.sea-wolf #canvas {width: 1000px; height: 500px; position: relative; z-index: 3;}
+.sea-wolf .text-info {width: 100%; height: 100%; line-height: 100%; text-align: center; position: absolute; top: 0; left: 0; display: none; z-index: 5}
+.sea-wolf .text-info .msg {color: #fff; font-weight: bold; font-size: 20px; text-shadow: 1px 1px 1px #000; height: 50px; line-height: 50px;}
+.cmMask {background: #000; height: 100%; left: 0; opacity: 0.6; position: absolute; top: 0; visibility: hidden; width: 100%; z-index: 1000; filter: alpha(opacity=60);}
+.cmDialog {display:none;}
+.cmDialogReady {display:block;position:absolute;left:-999px;top:-999px;z-index:1100; border: 10px solid rgba(0, 0, 0, 0.8); border-radius: 10px; background: #eff;}
+.cmPlaceholderBlur {color:#aeaeae !important;}
+.cmRowSelectable {cursor: pointer;}
+.cmRowSelectable label {cursor: pointer;}
+.cmRowSelectable input.radio {cursor: pointer;}
+.gift-select-box {font-size: 12px;}
+.gift-select-box .gift-list {width: 750px; margin: 0 auto; text-align: center}
+.gift-select-box .gift-list li {float: left; width: 226px; margin:10px; height: 300px; text-align: left; background: #fff; border: 2px solid #ccc; border-radius: 5px; cursor: pointer; position: relative; top: -50; left: 0; opacity: 0}
+.gift-select-box .gift-list li.selected {border: 2px solid #0071e7;}
+.gift-select-box .gift-list li .img {width: 200px; height: 200px; border: 1px solid #ccc; border-radius: 3px; margin: 10px auto 2px; background: #eff;}
+.gift-select-box .gift-list li .name {height: 16px; line-height: 18px; border: 1px solid #ccc; color: #333; padding-left: 1em; margin: 0 13px 2px; background: #eff; border-radius: 3px; color: #0071e7; font-weight: bold; overflow: hidden}
+.gift-select-box .gift-list li .desc {line-height: 18px; border: 1px solid #ccc; color: #333; margin: 0 13px; text-indent: 1em; background: #eff; border-radius: 3px; height: 54px;}
+.gift-select-box .gift-list li.selected .img,
+.gift-select-box .gift-list li.selected .name,
+.gift-select-box .gift-list li.selected .desc {border: 1px solid #0071e7;}
+.gift-select-box .gift-list li .name span {float: left;}
+.gift-select-box .gift-list li .name strong {float: right; font-weight: normal; color: #333;}
+.gift-select-box .gift-list li .name strong em {font-style: normal; color: #0071e7; font-family: verdana; font-weight: bold;}
+.popup-fail {width: 450px; text-align: center;}
+.popup-fail .msg {width: 450px; height: 100px; line-height: 100px; color: #000; font-size: 24px; font-weight: bold; font-size: 24px; vertical-align: middle; margin: 0 auto 2px;}
+.popup-fail .btns {width: 400px; margin: 0 auto 10px; background: #eff; border: 1px solid #ccc; border-radius: 3px;}
+.popup-fail .btns a {display: block; border-radius: 3px; width: 200px; height: 30px; line-height: 30px; margin: 10px auto; cursor: pointer; background: #0071e7; color: #fff; font-weight: bold;}
+.popup-fail .btns a:hover {color: #000;}
+
+.popup-win {width: 450px; text-align: center;}
+.popup-win .msg {width: 450px; height: 100px; line-height: 100px; color: #0071e7; font-size: 24px; font-weight: bold; font-size: 24px; vertical-align: middle; margin: 0 auto 2px;}
+.popup-win .btns {width: 400px; margin: 0 auto 10px; background: #eff; border: 1px solid #ccc; border-radius: 3px;}
+.popup-win .btns a {display: block; border-radius: 3px; width: 200px; height: 30px; line-height: 30px; margin: 10px auto; cursor: pointer; background: #0071e7; color: #fff; font-weight: bold;}
+.popup-win .btns a:hover {color: #000;}
+
+.popup-shop {width: 450px; height: 420px;}
+.popup-shop .tab-list {height: 50px; overflow: hidden}
+.popup-shop .tab-list li {height: 50px; font-weight: bold; float: left; cursor: pointer; width: 225px; text-align: center; line-height: 50px; font-size: 14px; font-weight: bold; color: #fff; background: #999;}
+.popup-shop .tab-list li:hover {background: #3392fa}
+.popup-shop .tab-list li.cmCurrentTab {background: #0071e7}
+.popup-shop .content {height: 300px; overflow: hidden;}
+.popup-shop .content .shop {background: #ccf; height: 300px; overflow: hidden; padding: 0 20px;}
+.popup-shop .content .list {height: 300px; width: 408px;}
+.popup-shop .content .list li {width: 200px; padding-top: 5px; margin: 0 2px; position: relative; font-size: 12px; float: left; overflow: hidden}
+.popup-shop .content .list li.ship {background: #c99}
+.popup-shop .content .list li .btn-box {display: none; position: absolute; height: 50px; bottom: 0; left: 0; width: 100%;}
+.popup-shop .content .list li:hover .btn-box {display: block;}
+.popup-shop .content .list li .buy,
+.popup-shop .content .list li .sell,
+.popup-shop .content .list li .equip {border-radius: 3px; width: 50px; text-align: center; height: 25px; line-height: 25px; cursor: pointer; background: #0071e7; color: #fff; font-weight: bold; position: absolute; bottom: 10px;}
+.popup-shop .content .list li .buy {right: 10px;}
+.popup-shop .content .list li .sell {right: 10px;}
+.popup-shop .content .list li .equip {left: 10px;}
+.popup-shop .content .list li .buy:hover,
+.popup-shop .content .list li .equip:hover,
+.popup-shop .content .list li .sell:hover {color: #000}
+.popup-shop .content .store {background: #ffc; height: 300px; overflow: hidden; padding: 0 20px;}
+.popup-shop .content .list .img {float: left; width: 100px; height: 100px; border: 1px solid #999; border-radius: 3px; margin: 0 3px 5px 0; background: #fff;}
+.popup-shop .content .list .name {float: left; width: 90px; height: 15px; line-height: 15px; border: 1px solid #999; border-radius: 3px; margin: 0 0 5px 0; text-indent: 3px; background: #fff; color: #333;}
+.popup-shop .content .list .coin {float: left; width: 90px; height: 15px; line-height: 15px; border: 1px solid #999; border-radius: 3px; margin: 0 0 5px 0; color: #ff0; text-indent: 3px; background: #fff; text-shadow: 1px 0 1px #333}
+.popup-shop .content .list .part {float: left; width: 90px; height: 15px; line-height: 15px; border: 1px solid #999; border-radius: 3px; margin: 0 0 5px 0; color: #0cd0ed; text-indent: 3px; background: #fff; text-shadow: 1px 0 1px #333}
+.popup-shop .content .list .desc {clear: both; border: 1px solid #999; border-radius: 3px; height: 182px; padding: 0 5px; line-height: 1.6em; background: #fff;}
+
+.popup-shop .msg {height: 20px; line-height: 20px; color: #fff; font-size: 12px; text-indent: 10px; background: #0071e7;}
+.popup-shop .msg .warn {color: #f00;}
+.popup-shop .current-info {height: 50px; overflow: hidden; background: #eee}
+.popup-shop .current-info .assets {width: 100px; height: 50px; float: left;}
+.popup-shop .current-info .equipment {float: left; width: 250px; height: 50px; overflow: hidden}
+.popup-shop .current-info .equipment .ship,
+.popup-shop .current-info .equipment .eq-list {height: 25px; line-height: 25px; font-size: 12px; overflow: hidden; padding-left: 25px;}
+.popup-shop .current-info .equipment .eq-list li {float: left; margin-right: 2px;}
+.popup-shop .current-info .equipment .ship li,
+.popup-shop .current-info .equipment .eq-list li {width: 25px; height: 25px; overflow: hidden; background: #faa; color: #fff; border-radius: 100%; cursor: pointer}
+.popup-shop .current-info .equipment .ship li.current,
+.popup-shop .current-info .equipment .eq-list li.current {background: #0071e7;}
+.popup-shop .current-info .equipment .ship li:hover,
+.popup-shop .current-info .equipment .eq-list li:hover {background: #3392fa;}
+.popup-shop .current-info .close-shop {float: left; border-radius: 3px; width: 80px; text-align: center; height: 30px; line-height: 30px; margin: 10px; cursor: pointer; background: #0071e7; color: #fff; font-weight: bold;}
+.popup-shop .current-info .close-shop:hover {color: #000}
+.popup-shop .current-info .assets .coin {color: #ff0; font-size: 14px; font-weight: bold; text-shadow: 1px 0 1px #333; line-height: 25px; text-indent: 5px;}
+.popup-shop .current-info .assets .part {color: #0cd0ed; font-size: 14px; font-weight: bold; text-shadow: 1px 0 1px #333; line-height: 25px; text-indent: 5px;}
+
+.popup-confirm-sell,
+.popup-unequip {width: 250px; height: 100px; text-align: center;}
+.popup-confirm-sell .msg,
+.popup-unequip .msg {width: 250px; height: 50px; line-height: 50px; color: #0071e7; font-size: 14px; font-weight: bold; vertical-align: middle; margin: 0 auto 2px;}
+.popup-confirm-sell .msg strong,
+.popup-unequip .msg strong {color: #f00}
+.popup-confirm-sell .btn-box,
+.popup-unequip .btn-box {position: relative; height: 50px;}
+.popup-confirm-sell .ok, 
+.popup-confirm-sell .cancel,
+.popup-unequip .ok,
+.popup-unequip .cancel {border-radius: 3px; width: 50px; text-align: center; height: 25px; line-height: 25px; cursor: pointer; background: #0071e7; color: #fff; font-weight: bold; position: absolute; bottom: 10px; font-size: 12px; cursor: pointer}
+.popup-confirm-sell .ok,
+.popup-unequip .ok {left: 10px;}
+.popup-confirm-sell .cancel,
+.popup-unequip .cancel {right: 10px;}
+.popup-confirm-sell .ok:hover,
+.popup-confirm-sell .cancel:hover,
+.popup-unequip .ok:hover,
+.popup-unequip .cancel:hover {color: #000}
+
+.carousel-wrap {position: relative;}
+.carousel-wrap .prev {position: absolute; left: -20px; top: 0; width: 20px; height: 300px; cursor: pointer}
+.carousel-wrap .next {position: absolute; right: -20px; top: 0; width: 20px; height: 300px; cursor: pointer}
+.carousel-wrap .prev .prev-s {border: 10px solid transparent; border-right-color: #000; position: absolute; top: 145px; left: -5px}
+.carousel-wrap .next .next-s {border: 10px solid transparent; border-left-color: #000; position: absolute; top: 145px; right: -5px}
+.carousel-wrap .not .prev-s {border-right-color: #ccc;}
+.carousel-wrap .not .next-s {border-left-color: #ccc;}
+
+
+#ftp {position: fixed; z-index: 5; left: 0px; top: 0px; width: 100%; height: 30px; background: #000; color: #fff; text-align: center; line-height: 30px; opacity: 0.6}
+
+
+/*-----editor-----*/
+.dragable {position: absolute; cursor: move;}
+
+
+.editor-win {height: 100%; position: relative; display: none; width: 100%; overflow: hidden; font-size: 12px;}
+.editorToolBar {width: 100px; border-left: 2px solid #0071e7; border-right: 2px solid #0071e7; border-bottom: 4px solid #0071e7; border-top: 15px solid #0071e7; border-radius: 5px 5px 3px 3px; position: absolute; z-index: 10; background: #fff;}
+.editorToolBar ul {padding: 5px 5px 20px 5px; cursor: default;}
+.editorToolBar ul li {position: relative; z-index: 2; cursor: pointer;}
+
+.editorBottomBar {position: absolute; z-index: 20; bottom: 0; left: 0; border-radius: 5px 5px 0 0; background: #0071e7; width: 100%; background: url(image/editor/bottombar.jpg) repeat-x 0 0}
+.editorBottomBar .clear-win-btn {cursor: pointer; float: left; width: 25px; height: 25px; text-indent: -9000px; background: #000; margin: 5px 10px;}
+.editorBottomBar ul,
+.editorBottomBar li {display: inline-block; height: 100%;}
+.editorBottomBar li {padding: 0 5px; margin: 0 1px; border-radius: 5px 5px 0 0; color: #fff; cursor: pointer; background: url(image/editor/bottombar.jpg) repeat-x 0 -35px; border: 1px solid #333;}
+.editorBottomBar li:hover {opacity: 0.8;}
+.editorBottomBar li.minisized {background: url(image/editor/bottombar.jpg) repeat-x 0 -70px; border-color: #999}
+.float-win {border-left: 3px solid #73b4f4; border-right: 3px solid #73b4f4; border-bottom: 6px solid #73b4f4; border-top: 25px solid #73b4f4; border-radius: 5px 5px 3px 3px; background: #fff; z-index: 999; opacity: 0.5;}
+.float-win.current {z-index: 1100; opacity: 1; box-shadow: 0 0 3px #333333}
+.float-win .float-win-title {position: absolute; top: -20px; left: 0; color: #fff; font-weight: bold; z-index: 2; cursor: default}
+.float-win .float-win-content {min-width: 200px; min-height: 200px; cursor: default}
+.float-win .win-btn {position: absolute; top: -21px; right: 5px; overflow: hidden; z-index: 2; cursor: default}
+.float-win .win-btn li {width: 15px; height: 15px; float: left; margin: 1px; cursor: pointer; border: 1px solid #666;}
+a.min-size-btn {display: block; width: 15px; height: 15px; text-indent: -9000px; background: url(image/editor/win-btn.jpg) no-repeat 0 0;}
+a.close-btn {display: block; width: 15px; height: 15px; text-indent: -9000px; background: url(image/editor/win-btn.jpg) no-repeat -15px 0;}
+a.min-size-btn:hover,
+a.close-btn:hover {opacity: 0.8}
+
+
+.as-canvas {position: absolute; z-index: 1;}
+.as-canvas .as-canvas-title {height: 20px;}
+.as-canvas .as-canvas-content {padding: 5px 0;}
+.as-canvas .canvas-box {background: #9999e7; position: relative;}
+.as-canvas .canvas-box svg {position: absolute}
+.as-canvas .canvas-box .sea-level-line {background: #fff; height: 1px; border-top: 10px solid #666; border-bottom: 10px solid #666; border-radius: 10px; position: relative; cursor: row-resize;}
+.as-canvas .canvas-box .sea-level-line span {display: block; text-align: center; width: 100%; height: 20px; position: absolute; top: 10px; left: 0; font-size: 14px; color: #f00;}
+
+
+
+
+
+
+
