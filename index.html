@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Sea-wolf : javascript,canvas,game" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sea-wolf</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ajccom/sea-wolf">View on GitHub</a>
+
+          <h1 id="project_title">Sea-wolf</h1>
+          <h2 id="project_tagline">javascript,canvas,game</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ajccom/sea-wolf/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ajccom/sea-wolf/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="sea-wolf" class="anchor" href="#sea-wolf"><span class="octicon octicon-link"></span></a>sea wolf</h1>
+
+<h2>
+<a name="javascriptcanvasgame" class="anchor" href="#javascriptcanvasgame"><span class="octicon octicon-link"></span></a>javascript,canvas,game</h2>
+
+<h2>
+<a name="%E6%B8%B8%E6%88%8F%E8%AF%B4%E6%98%8E" class="anchor" href="#%E6%B8%B8%E6%88%8F%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>游戏说明</h2>
+
+<p>方向键控制移动，空格键发射子弹，B键释放power。暂时是个DEMO，只设置了3关，有BOSS战。玩家子弹可以变换升级，并设置了3种类型的子弹供玩家体验。Power暂时只设计了一种:)。</p>
+
+<h2>
+<a name="%E8%BF%90%E8%90%A5" class="anchor" href="#%E8%BF%90%E8%90%A5"><span class="octicon octicon-link"></span></a>运营</h2>
+
+<h3>
+<a name="%E5%A6%82%E4%BD%95%E8%87%AA%E8%A1%8C%E8%AE%BE%E7%BD%AE%E5%85%B3%E5%8D%A1" class="anchor" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E8%A1%8C%E8%AE%BE%E7%BD%AE%E5%85%B3%E5%8D%A1"><span class="octicon octicon-link"></span></a>如何自行设置关卡</h3>
+
+<h4>
+<a name="%E5%BC%80%E5%8F%91%E8%80%85%E5%8F%AF%E4%BB%A5%E5%9C%A8swgamestagestagedata%E4%B8%AD%E4%BB%BB%E6%84%8F%E6%B7%BB%E5%8A%A0%E5%85%B3%E5%8D%A1%E4%BB%A5%E5%8F%8A%E5%85%B3%E5%8D%A1%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%85%B5boss" class="anchor" href="#%E5%BC%80%E5%8F%91%E8%80%85%E5%8F%AF%E4%BB%A5%E5%9C%A8swgamestagestagedata%E4%B8%AD%E4%BB%BB%E6%84%8F%E6%B7%BB%E5%8A%A0%E5%85%B3%E5%8D%A1%E4%BB%A5%E5%8F%8A%E5%85%B3%E5%8D%A1%E4%B8%AD%E7%9A%84%E5%B0%8F%E5%85%B5boss"><span class="octicon octicon-link"></span></a>开发者可以在SW.game.stage.stageData中任意添加关卡以及关卡中的小兵、boss。</h4>
+
+<blockquote>
+<p>SW.game.stage.stageData['0'] = [...]</p>
+</blockquote>
+
+<p>设置关卡1</p>
+
+<blockquote>
+<p>SW.game.stage.stageData['1'] = [...]</p>
+</blockquote>
+
+<p>设置关卡2</p>
+
+<blockquote>
+<p>SW.game.stage.stageData['2'] = [...]</p>
+</blockquote>
+
+<p>设置关卡3</p>
+
+<blockquote>
+<p>{type: 'enemy',move: 100,idx: 7,time: 4200,gift: {egg: 1,equipment: [0]}}</p>
+</blockquote>
+
+<p>将会在该关卡开始4.2s后向舞台添加一个编号为7的小兵(SW.game.enemy)，小兵的行为路线编号是100(SW.game.movePath)，击毁奖励是一个egg(升级能力用)和一个编号为0的装备(SW.game.equipment)(可以从【shop】=》【仓库】中查看)。</p>
+
+<blockquote>
+<p>{type: 'egg',time: 20000, XY: [5, 10]}</p>
+</blockquote>
+
+<p>直接向舞台添加egg和p需要设定XY值，X与Y的值在0-10范围(包含0-10)。</p>
+
+<blockquote>
+<p>{'half': true}</p>
+</blockquote>
+
+<p>代表关卡一半，关卡后半的计时从0开始。</p>
+
+<h3>
+<a name="%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9%E6%B8%B8%E6%88%8F%E6%95%B0%E6%8D%AE" class="anchor" href="#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9%E6%B8%B8%E6%88%8F%E6%95%B0%E6%8D%AE"><span class="octicon octicon-link"></span></a>如何更改游戏数据</h3>
+
+<blockquote>
+<p>SW.game.enemy</p>
+</blockquote>
+
+<p>数字编号的属性就是小兵的数据。</p>
+
+<blockquote>
+<p>SW.game.boss</p>
+</blockquote>
+
+<p>数字编号的属性就是boss的数据。boss的技能可以在skill中设置，形如[[技能名, 技能CD]|, [...]]。</p>
+
+<blockquote>
+<p>SW.game.ship</p>
+</blockquote>
+
+<p>数字编号的属性是船体的数据。</p>
+
+<h2>
+<a name="%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E" class="anchor" href="#%E4%BB%A3%E7%A0%81%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>代码说明</h2>
+
+<p>_sea-wolf.js是游戏最主要的脚本，除了使用到的jQuery之外，其他程序都在其中。<strong>文件中代码采用字面量形式构建，可以折叠后查看</strong>。下面讲一下这份文件中的内容。</p>
+
+<h3>
+<a name="sw--namespace" class="anchor" href="#sw--namespace"><span class="octicon octicon-link"></span></a>SW —— namespace</h3>
+
+<p>sea wolf的简写，也是程序的命名空间。</p>
+
+<h3>
+<a name="swui" class="anchor" href="#swui"><span class="octicon octicon-link"></span></a>SW.UI</h3>
+
+<p>除了Canvas之外的DOM方面的UI组件都定义在SW.UI之中。(editor部分不计)</p>
+
+<h3>
+<a name="swloader" class="anchor" href="#swloader"><span class="octicon octicon-link"></span></a>SW.loader</h3>
+
+<p>游戏加载时候的loader组件</p>
+
+<h3>
+<a name="swgame" class="anchor" href="#swgame"><span class="octicon octicon-link"></span></a>SW.game</h3>
+
+<p>游戏中各种数据、行为都在其中</p>
+
+<h3>
+<a name="sweditor" class="anchor" href="#sweditor"><span class="octicon octicon-link"></span></a>SW.editor</h3>
+
+<p>编辑器组件（开发中）</p>
+
+<h3>
+<a name="swini" class="anchor" href="#swini"><span class="octicon octicon-link"></span></a>SW.ini</h3>
+
+<p>游戏初始化函数</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sea-wolf maintained by <a href="https://github.com/ajccom">ajccom</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
