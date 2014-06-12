@@ -6,7 +6,6 @@ javascript,canvas,game
 
 ## [Git Page](https://ajccom.github.io/sea-wolf/)
 
-
 ##游戏说明
 
 方向键控制移动，空格键发射子弹，B键释放power。暂时是个DEMO，只设置了3关，有BOSS战。玩家子弹可以变换升级，并设置了3种类型的子弹供玩家体验。Power暂时只设计了一种\:\)。
